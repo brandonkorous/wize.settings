@@ -19,7 +19,6 @@ namespace wize.settings.odata.V1.Controllers
     [ApiVersion("1.0")]
     //[ApiVersion("1.0-beta")]
     [ODataRoutePrefix("WizeSettings")]
-    [Authorize]
     public partial class WizeSettingsController : ODataController
     {
         private readonly WizeContext _context;
