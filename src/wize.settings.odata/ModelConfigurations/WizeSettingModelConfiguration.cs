@@ -27,6 +27,7 @@ namespace wize.settings.odata.ModelConfigurations
         {
             builder.EntityType<WizeSetting>().HasKey(m => new { m.Type, m.Name });
             builder.EntitySet<WizeSetting>("WizeSettings");
+            builder.Action("Update").Returns<IActionResult>().Parameter<List<WizeSetting>>("model");
             return builder.EntitySet<WizeSetting>("WizeSettings").EntityType;
         }
 
