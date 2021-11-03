@@ -31,11 +31,8 @@ namespace wize.settings.odata.Config
                 options.EnableDependencyInjection();
                 options.Select().Filter().Count().Expand().OrderBy().SkipToken().MaxTop(100);
                 options.ServiceProvider.GetRequiredService<ODataOptions>().UrlKeyDelimiter = Microsoft.OData.ODataUrlKeyDelimiter.Parentheses;
-#if DEBUG
+
                 options.MapVersionedODataRoute("odata", "v{version:apiVersion}", edmModels);
-#else
-                options.MapVersionedODataRoute("odata", "settings-odata/v{version:apiVersion}", edmModels);
-#endif
             });
 
             return app;

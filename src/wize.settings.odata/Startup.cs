@@ -51,9 +51,7 @@ namespace wize.settings.odata
         {
             if (env.IsDevelopment())
             {
-#if DEBUG
-                app.UseDeveloperExceptionPage();
-#endif
+            //    app.UseDeveloperExceptionPage();
             }
             app.UseJwt();
             app.UseHttpsRedirection();
