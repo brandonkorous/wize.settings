@@ -36,6 +36,7 @@ namespace wize.settings.odata.V1.Controllers
         /// This method will return the requested Dataset.
         /// </summary>
         /// <returns>IQueryable of requested type.</returns>
+        [Authorize("list:setting")]
         [HttpGet]
         [ODataRoute]
         [Produces("application/json")]
@@ -63,6 +64,7 @@ namespace wize.settings.odata.V1.Controllers
         /// <param name="name">Key value</param>
         /// <param name="type">Key value</param>
         /// <returns>Data model</returns>
+        [Authorize("list:setting")]
         [ODataRoute("({name}, {type})")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
